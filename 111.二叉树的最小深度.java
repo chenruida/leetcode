@@ -28,7 +28,6 @@ class Solution {
             return minDepth(root.right) + 1;
         if (root.right == null)
             return minDepth(root.left) + 1;
-
     }
 }
 // @lc code=end

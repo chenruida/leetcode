@@ -1,12 +1,11 @@
 /*
- * @lc app=leetcode.cn id=104 lang=java
+ * @lc app=leetcode.cn id=129 lang=java
  *
- * [104] 二叉树的最大深度
+ * [129] 求根节点到叶节点数字之和
  */
 
 // @lc code=start
 /**
-<<<<<<< HEAD
  * Definition for a binary tree node.
  * public class TreeNode {
  *     int val;
@@ -22,13 +21,9 @@
  * }
  */
 class Solution {
-    public int maxDepth(TreeNode root) {
-        if (root == null) {
-            return 0;
-        }
-        int left = maxDepth(root.left);
-        int right = maxDepth(root.right);
-        return 1 + java.lang.Math.max(left, right);
+    public int sumNumbers(TreeNode root) {
+
     }
 }
 // @lc code=end
+

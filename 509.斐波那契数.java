@@ -11,8 +11,7 @@ class Solution {
             return 0;
         if (n == 1)
             return 1;
-        else
-            return fib(n - 1) + fib(n - 2);
+        return fib(n - 1) + fib(n - 2);
     }
 }
 // @lc code=end

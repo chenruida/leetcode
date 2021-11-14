@@ -1,12 +1,15 @@
+import javax.swing.tree.TreeNode;
+
+import apple.laf.JRSUIUtils.Tree;
+
 /*
- * @lc app=leetcode.cn id=104 lang=java
+ * @lc app=leetcode.cn id=404 lang=java
  *
- * [104] 二叉树的最大深度
+ * [404] 左叶子之和
  */
 
 // @lc code=start
 /**
-<<<<<<< HEAD
  * Definition for a binary tree node.
  * public class TreeNode {
  *     int val;
@@ -22,13 +25,19 @@
  * }
  */
 class Solution {
-    public int maxDepth(TreeNode root) {
-        if (root == null) {
+    int sum = 0;
+
+    public int sumOfLeftLeaves(TreeNode root) {
+        if (root == null)
             return 0;
+        if (root.left != null && root.left.left == null && root.left.right == null) {
+            sum = sum + root.left.val;
         }
-        int left = maxDepth(root.left);
-        int right = maxDepth(root.right);
-        return 1 + java.lang.Math.max(left, right);
+        sumOfLeftLeaves(root.left);
+        sumOfLeftLeaves(root.right);
+        return sum;
+
     }
+
 }
 // @lc code=end

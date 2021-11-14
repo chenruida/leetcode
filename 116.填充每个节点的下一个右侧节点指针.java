@@ -30,6 +30,7 @@ class Node {
 
 class Solution {
     public Node connect(Node root) {
+<<<<<<< HEAD
         if (root == null)
             return null;
         connectTwoNode(root.left, root.right);
