@@ -1,7 +1,9 @@
+import java.util.ArrayList;
+
 /*
- * @lc app=leetcode.cn id=662 lang=java
+ * @lc app=leetcode.cn id=257 lang=java
  *
- * [662] 二叉树最大宽度
+ * [257] 二叉树的所有路径
  */
 
 // @lc code=start
@@ -21,8 +23,12 @@
  * }
  */
 class Solution {
-    public int widthOfBinaryTree(TreeNode root) {
+    List<String> strList = new ArrayList<>();
 
+    public List<String> binaryTreePaths(TreeNode root) {
+        if (root == null)
+            return null;
+        
     }
 }
 // @lc code=end

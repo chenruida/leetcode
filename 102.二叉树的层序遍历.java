@@ -1,4 +1,6 @@
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Queue;
 
 /*
  * @lc app=leetcode.cn id=102 lang=java
@@ -23,15 +25,30 @@ import java.util.ArrayList;
  * }
  */
 class Solution {
+    List<List<Integer>> resList = new ArrayList();
+
     public List<List<Integer>> levelOrder(TreeNode root) {
         if (root == null) {
-            return null;
+            return resList;
         }
         Queue<TreeNode> q = new LinkedList<>();
         q.offer(root);
-        while(!q.isEmpty()){
-            TreeNode cur = q.poll();
-            
+        while (!q.isEmpty()) {
+            List<Integer> temp = new ArrayList<>();
+            int size = q.size();
+            for (int i = 1; i <= size; i++) {
+                TreeNode cur = q.poll();
+                temp.add(cur.val);
+                if (cur.left != null) {
+                    q.offer(cur.left);
+                }
+                if (cur.right != null) {
+                    q.offer(cur.right);
+                }
+            }
+            resList.add(temp);
         }
+        return resList;
+    }
 }
 // @lc code=end

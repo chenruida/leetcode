@@ -1,7 +1,7 @@
 /*
- * @lc app=leetcode.cn id=116 lang=java
+ * @lc app=leetcode.cn id=117 lang=java
  *
- * [116] 填充每个节点的下一个右侧节点指针
+ * [117] 填充每个节点的下一个右侧节点指针 II
  */
 
 // @lc code=start
@@ -40,11 +40,14 @@ class Solution {
         if (node1 == null || node2 == null) {
             return;
         }
-        // 
         node1.next = node2;
         connectTwoNode(node1.left, node1.right);
         connectTwoNode(node2.left, node2.right);
         connectTwoNode(node1.right, node2.left);
+        connectTwoNode(node1.right, node2.right);
+        connectTwoNode(node1.left, node2.right);
+        connectTwoNode(node1.left, node2.left);
     }
+
 }
 // @lc code=end

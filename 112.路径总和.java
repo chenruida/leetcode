@@ -1,7 +1,10 @@
+import java.util.ArrayList;
+import java.util.List;
+
 /*
- * @lc app=leetcode.cn id=129 lang=java
+ * @lc app=leetcode.cn id=112 lang=java
  *
- * [129] 求根节点到叶节点数字之和
+ * [112] 路径总和
  */
 
 // @lc code=start
@@ -21,9 +24,10 @@
  * }
  */
 class Solution {
-    public int sumNumbers(TreeNode root) {
+
+    public boolean hasPathSum(TreeNode root, int targetSum) {
         if (root == null)
-            return 0;
+            return false;
         if (root.left == null && root.right == null) {
             return targetSum == root.val;
         }
@@ -31,5 +35,6 @@ class Solution {
         boolean right = hasPathSum(root.right, targetSum - root.val);
         return left || right;
     }
+
 }
 // @lc code=end
